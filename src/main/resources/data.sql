@@ -1,0 +1,3 @@
+INSERT INTO CUSTOMER
+VALUES (1, 'AMIT', 'SINGH', '89'),
+       (2, 'MOHAN', 'KUMAR', '90');
