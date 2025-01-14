@@ -18,10 +18,15 @@ public class EmployeeDAO {
 
     public List<Employee> getAllEmployees() {
 
+        //use of anonymous inner class for functional interface implementation
 //        RowMapper rm = new RowMapper() {
 //            @Override
-//            public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
-//                return null;
+//            public Employee mapRow(ResultSet a, int rowNum) throws SQLException {
+//                Employee employee = new Employee();
+//                employee.setEmpName(a.getString("EMP_NAME"));
+//                employee.setEmpId(a.getInt("EMP_ID"));
+//                employee.setEmpSalary(a.getInt("EMP_SALARY"));
+//                return employee;
 //            }
 //        };
 
