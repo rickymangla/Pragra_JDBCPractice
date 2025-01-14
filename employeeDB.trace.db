@@ -1,0 +1,14 @@
+2025-01-13 23:29:04.251681-05:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE EMPLOYEE\000d\000a(\000d\000a    EMP_NAME VARCHAR(255),\000d\000a    EMP_ID   INT,\000d\000a    EMP_SALARY INT,\000d\000a[*])"; expected "identifier"; SQL statement:
+CREATE TABLE EMPLOYEE
+(
+    EMP_NAME VARCHAR(255),
+    EMP_ID   INT,
+    EMP_SALARY INT,
+) [42001-224]
+2025-01-14 00:57:47.205397-05:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO EMPLOYEE VALUES([*]'shlok, 104, 550);"; SQL statement:
+INSERT INTO EMPLOYEE VALUES('shlok, 104, 550); [42000-224]
+2025-01-14 00:58:04.092261-05:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO EMPLOYEE VALUES([*]'shlok, 104, 5500);"; SQL statement:
+INSERT INTO EMPLOYEE VALUES('shlok, 104, 5500); [42000-224]
