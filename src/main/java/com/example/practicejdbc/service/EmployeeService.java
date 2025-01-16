@@ -16,4 +16,24 @@ public class EmployeeService {
     public List<Employee> getAllEmployees() {
         return employeeDAO.getAllEmployees();
     }
+
+    public boolean addEmployee(Employee employee) {
+        return employeeDAO.addEmployee(employee);
+    }
+
+    public boolean updateEmployee(Employee employee) {
+        return employeeDAO.updateEmployee(employee);
+    }
+
+    public boolean deleteEmployee(int empId) {
+        return employeeDAO.deleteEmployee(empId);
+    }
+
+    public Employee getEmployeeDetail(Integer empId) {
+        return employeeDAO.getEmployeeDetail(empId);
+    }
+
+
+
+
 }

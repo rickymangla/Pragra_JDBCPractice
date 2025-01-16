@@ -1,13 +1,16 @@
 package com.example.practicejdbc.model;
+
+import org.springframework.stereotype.Component;
+
 //this class is called POJO(plain old java object) class or DTO(data transfer object) class
+//@Component
 public class Employee {
     private String empName;
     private Integer empId;
+    private Integer empSalary;
 
     public Employee() {
     }
-
-    private Integer empSalary;
 
     public String getEmpName() {
         return empName;

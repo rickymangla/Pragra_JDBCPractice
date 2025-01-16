@@ -4,10 +4,7 @@ import com.example.practicejdbc.dao.EmployeeDAO;
 import com.example.practicejdbc.model.Employee;
 import com.example.practicejdbc.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
 import java.util.List;
@@ -17,6 +14,8 @@ import java.util.List;
 public class EmployeeAPI {
     @Autowired
     EmployeeService employeeService;
+//    @Autowired
+//    Employee employee;
 
     @RequestMapping(value = "/test", method = RequestMethod.GET)
     public String test() {
@@ -37,4 +36,46 @@ public class EmployeeAPI {
         return employeeService.getAllEmployees();
     }
 
+    @PostMapping("/addEmployee")
+    public String addEmployee() {
+        Employee employee = new Employee();
+        employee.setEmpName("john");
+        employee.setEmpId(105);
+        employee.setEmpSalary(6500);
+        boolean result = employeeService.addEmployee(employee);
+        if (result) {
+            return "employee has been added successfully";
+        } else {
+            return "employee has not been added";
+        }
+    }
+
+    @PutMapping("/updateEmployee")
+    public String updateEmployeeDetail() {
+        Employee employee = new Employee();
+        employee.setEmpId(103);
+        employee.setEmpName("hari");
+        // employee.setEmpSalary(10500);
+        boolean result = employeeService.updateEmployee(employee);
+        if (result) {
+            return "employee has been updated successfully";
+        } else {
+            return "employee has not been updated";
+        }
+    }
+
+    @DeleteMapping("/deleteEmployee")
+    public String deleteEmployee() {
+        boolean result = employeeService.deleteEmployee(105);
+        if (result) {
+            return "employee has been deleted successfully";
+        } else {
+            return "employee has not been deleted";
+        }
+    }
+
+    @GetMapping("/getEmployee")
+    public Employee getEmployeeDetail(Integer id) {
+        return employeeService.getEmployeeDetail(101);
+    }
 }
